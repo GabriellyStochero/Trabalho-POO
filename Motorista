@@ -1,0 +1,25 @@
+package Multas;
+
+public class Motorista {
+	private String nome;
+    private String cnh;
+    private int pontos;
+
+    public Motorista(String nome, String cnh) {
+        this.nome = nome;
+        this.cnh = cnh;
+        this.pontos = 0;
+    }
+
+    public void adicionarPontos(int pontos) {
+        this.pontos += pontos;
+    }
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+}
