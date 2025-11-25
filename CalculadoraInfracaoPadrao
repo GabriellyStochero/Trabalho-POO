@@ -1,0 +1,14 @@
+package Multas;
+
+public class CalculadoraInfracaoPadrao implements Calcularinfracao {
+
+    @Override
+    public int calcularPontos(Tipoinfracao tipo) {
+        return tipo.getPontos();
+    }
+
+    @Override
+    public double calcularValor(Tipoinfracao tipo) {
+        return tipo.getValor();
+    }
+}
