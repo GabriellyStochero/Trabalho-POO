@@ -1,0 +1,5 @@
+package Multas;
+
+public interface AvaliadorCnh {
+    String avaliar(int pontos);
+}
