@@ -1,0 +1,6 @@
+package Multas;
+
+public interface Calcularinfracao {
+    int calcularPontos(Tipoinfracao tipo);
+    double calcularValor(Tipoinfracao tipo);
+}
