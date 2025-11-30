@@ -1,0 +1,19 @@
+package Multas;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Motorista m1 = new Motorista("João Silva", "123456");
+        Veiculo v1 = new Veiculo("ABC-1234", "Gol", m1);
+
+        Calcularinfracao calculadora = new CalculadoraInfracaoPadrao();
+        AvaliadorCnh avaliador = new AvaliadorCnhPadrao();
+
+        RegistroInfracaoService registro =
+                new RegistroInfracaoService(calculadora, avaliador);
+
+        registro.registrar(new Infracao(Tipoinfracao.MEDIA, v1));
+        registro.registrar(new Infracao(Tipoinfracao.GRAVE, v1));
+        registro.registrar(new Infracao(Tipoinfracao.GRAVISSIMA, v1));
+    }
+}
