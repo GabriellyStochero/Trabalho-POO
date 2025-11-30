@@ -1,0 +1,14 @@
+package Multas;
+
+public class Infracao {
+    private Tipoinfracao tipo;
+    private Veiculo veiculo;
+
+    public Infracao(Tipoinfracao tipo, Veiculo veiculo) {
+        this.tipo = tipo;
+        this.veiculo = veiculo;
+    }
+
+    public Tipoinfracao getTipo() { return tipo; }
+    public Veiculo getVeiculo() { return veiculo; }
+}
