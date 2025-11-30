@@ -1,0 +1,11 @@
+package Multas;
+
+public class AvaliadorCnhPadrao implements AvaliadorCnh {
+
+    @Override
+    public String avaliar(int pontos) {
+        if (pontos < 10) return "Regular";
+        if (pontos < 20) return "Em risco";
+        return "CNH Suspensa";
+    }
+}
