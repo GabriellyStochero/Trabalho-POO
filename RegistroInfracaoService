@@ -1,0 +1,29 @@
+package Multas;
+
+public class RegistroInfracaoService {
+
+    private Calcularinfracao calculadora;
+    private AvaliadorCnh avaliador;
+
+    public RegistroInfracaoService(Calcularinfracao calculadora, AvaliadorCnh avaliador) {
+        this.calculadora = calculadora;
+        this.avaliador = avaliador;
+    }
+
+    public void registrar(Infracao infracao) {
+
+        Motorista m = infracao.getVeiculo().getMotorista();
+
+        int pontos = calculadora.calcularPontos(infracao.getTipo());
+        double valor = calculadora.calcularValor(infracao.getTipo());
+
+        m.adicionarPontos(pontos);
+
+        System.out.println("Multa registrada:");
+        System.out.println("Motorista: " + m.getNome());
+        System.out.println("Pontos somados: " + pontos);
+        System.out.println("Valor da multa: R$ " + valor);
+        System.out.println("Situação atual: " + avaliador.avaliar(m.getPontos()));
+        System.out.println("---------------------------------");
+    }
+}
